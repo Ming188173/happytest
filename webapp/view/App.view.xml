@@ -1,0 +1,39 @@
+<mvc:View
+        controllerName="sap.ui.demo.walkthrough.controller.App"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        displayBlock="true">
+        <Shell>
+
+                <App>
+                        <pages>
+                                <Page title="{i18n>homePageTitle}">
+                                        <content>
+                                                <Panel
+                                                        headerText="{i18n>helloPanelTitle}"
+                                                        class="sapUiResponsiveMargin"
+                                                        width="auto">
+                                                        <content>
+                                                                <Input
+                                                                        value="{/recipient/name}"
+                                                                        description="您的心愿是 {/recipient/name}"
+                                                                        valueLiveUpdate="true"
+                                                                        width="100%"/>
+                                                                <Button
+                                                                        text="{i18n>showFlowerButtonText}"
+                                                                        press=".onShowFlower"
+                                                                        width="50%"/>
+                                                                <Text
+                                                                        text="您即将 {/recipient/name}"
+                                                                        class="sapUiSmallMargin"/>
+                                                                <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.InvoiceList"/>
+
+
+                                                        </content>
+                                                </Panel>
+                                        </content>
+                                </Page>
+                        </pages>
+                </App>
+        </Shell>
+</mvc:View>
